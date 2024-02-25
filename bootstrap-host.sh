@@ -9,7 +9,7 @@ BTC_IMAGE=${BTC_IMAGE:-kylemanna/bitcoind}
 distro=$1
 shift
 
-memtotal=$(grep ^MemTotal /proc/meminfo | awk '{print int($2/1024) }')
+memtotal=$(grep ^SwapTotal /proc/meminfo | awk '{print int($2/1024) }')
 
 #
 # Only do swap hack if needed
